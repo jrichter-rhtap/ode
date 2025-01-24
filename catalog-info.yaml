@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ode 
+  description: Secure Supply Chain Example for Object Detection Application   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:
+    # ArgoCD apps from this template used rhtap-gitops as the grouping
+    argocd/app-selector: rhtap/gitops=ode  
+    janus-idp.io/tekton: ode 
+    backstage.io/kubernetes-id: ode 
+    backstage.io/techdocs-ref: dir:. 
+    quay.io/repository-slug: jrichter/oda
+  tags: ["ai", "detr", "python"] 
+spec:
+  type: service
+  owner: user:guest 
+  lifecycle: experimental
+ 
